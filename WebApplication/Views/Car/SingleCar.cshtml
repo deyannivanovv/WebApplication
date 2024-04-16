@@ -1,0 +1,85 @@
+﻿@model WebApplication.Services.Models.CarOverViewModel
+<head>
+    <link href="~/assets/css/singlecarstyle.css" rel="stylesheet">
+</head>
+<div class="container">
+    <div class="car-info">        
+        <h1>@Model.Name @Model.Model</h1>
+        <div class="price">@Model.Price.ToString("#.##.##") лв.</div>
+        <div class="details">
+            <div class="detail">
+                <span>Дата на производство:</span>
+                <span>@Model.Year.Date.ToShortDateString()</span>
+            </div>
+            <div class="detail">
+                <span>Пробег:</span>
+                <span>@Model.Car_mileage км.</span>
+            </div>
+            <div class="detail">
+                <span>Тип двигател:</span>
+                <span>@Model.Fuel</span>
+            </div>
+            <div class="detail">
+                <span>Кубатура [куб.см]:</span>
+                <span>@Model.Cub_capacity куб.см</span>
+            </div>
+            <div class="detail">
+                <span>Мощност:</span>
+                <span>@Model.Horsepower к.с.</span>
+            </div>
+            <div class="detail">
+                <span>Скоростна кутия:</span>
+                <span>@Model.Gearbox</span>
+            </div>
+            <div class="detail">
+                <span>Цвят:</span>
+                <span>@Model.Color</span>
+            </div>
+            <div class="detail">
+                <span>Категория:</span>
+                <span>@Model.cartype</span>
+            </div>
+        </div>
+    </div>
+    <div class="car-image">
+        @foreach (var picture in Model.Pictures)
+        {
+           
+                <div class="slide">
+                    <img src="data:img/*;base64,@(Convert.ToBase64String(picture))" />
+                <button class="prev-button" onclick="prevSlide()">&#10094;</button>
+                <button class="next-button" onclick="nextSlide()">&#10095;</button>
+            </div>            
+        }
+        </div>
+    </div>
+
+<section class="extras">
+    <div class="container">
+        <h2>Екстри:</h2>
+        <div class="additional-info">
+            <p>@Model.Specs</p>
+        </div>
+    </div>
+</section>
+<section class="extras">
+    <div class="container">
+        <h2>Допълнителна информация:</h2>
+        <div class="more-info">
+            <ul>
+                <p>@Model.Description</p>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="contact-info">
+    <div class="container">
+        <h2>За връзка с нас:</h2>
+        <p>Деян Иванов</p>
+        <p>Телефон: 0893515395</p>
+        <p>Email: info@ibor.com</p>
+        <p>Локация: Враца, Оряховско шосе-срещу Метан станцията</p>
+    </div>
+</section>
+<script src="~/assets/js/singlecarscript.js"></script>

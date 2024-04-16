@@ -1,0 +1,270 @@
+﻿@model WebApplication.Models.HomeViewModel
+<section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container position-relative">
+        <h1>Открий своя автомобил</h1>
+        <a href="#portfolio" class="btn-get-started scrollto">Разгледай нашите предложения</a>
+    </div>
+</section><!-- End Hero -->
+<main id="main">
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients section-bg">
+        <div class="container">
+
+            <div class="row">
+                @foreach (var item in @Model.CarBrands)
+                {
+                    <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                        <img src="data:image/*;base64,@(Convert.ToBase64String(item.Picture))" class="img-fluid" alt="">
+                    </div>
+                }              
+            </div>
+
+        </div>
+    </section><!-- End Clients Section -->
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0">
+                    <h3>За нас</h3>
+                    <p>
+                        Изискванията на клиента са приоритет №1 за служителите на автокъща IBOR! Екипът ни се грижи за това да изпитате пълно удоволствие от шофирането на автомобил.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <i class="bx bx-receipt"></i>
+                            <h4>Екип от професионалисти</h4>
+                            <p>
+                                Професионалистите, с които работим, ще се погрижат да откриете това, което търсите.
+                                В автокъщата ще откриете нови и използвани автомобили за различни цели.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="bx bx-cube-alt"></i>
+                            <h4>Автомобили</h4>
+                            <p>Фирмата ни внася автомобили на следните марки: Audi, BMW, Mercedes-Benz, Peugeot, Seat и Volkswagen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End About Section -->
+    <!-- ======= Counts Section ======= -->
+   
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Защо да изберете нас?</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box iconbox-blue">
+                        <div class="icon">
+                            <i class="bx bx-mobile"></i>
+                        </div>
+                        <h4><a href="">Професионална консултация</a></h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box iconbox-orange ">
+                        <div class="icon">
+                            <i class="bx bx-camera"></i>
+                        </div>
+                        <h4><a href="">Реални снимки и техническо състояние</a></h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box iconbox-pink">
+                        <div class="icon">
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <h4><a href="">Собствен лизинг с индивидуални условия</a></h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box iconbox-yellow">
+                        <div class="icon">
+                            <i class="bx bx-car"></i>
+                        </div>
+                        <h4><a href="">Изкупуване и замяна на коли с доплащане</a></h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box iconbox-red">
+                        <div class="icon">
+                            <i class="bx bx-car"></i>
+                        </div>
+                        <h4><a href="">Поръчка на автомобили от чужбина</a></h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box iconbox-teal">
+                        <div class="icon">
+                            <i class="bx bx-file"></i>
+                        </div>
+                        <h4><a href="">Съдействие при регистрация и застраховка</a></h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+    <!-- ======= Cars Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Нашите автомобили</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">Всички</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row portfolio-container">
+                @foreach (var item in @Model.Cars)
+                {
+                    <div id="@item.cartype" class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <a href="@this.Url.Action("Car", "Car", new {item.ID})"><img src="data:image/*;base64,@(Convert.ToBase64String(item.Picture))" class="img-fluid"></a>
+                        <div class="portfolio-info">
+                            <h4>@item.Name @item.Model</h4>
+                            <p>@item.Price.ToString("#.##.##") лв.</p>
+                        </div>
+                    </div>
+                }               
+            </div>
+        </div>
+    </section><!-- End Portfolio Section -->
+    <!-- ======= CarParts Section ======= -->
+    <section id="gearbox" class="gearbox">
+        <div class="container">
+            <div class="section-title">
+                <h2>Нашите части</h2>
+            </div>
+            <div class="row portfolio-container">
+                @foreach (var item in @Model.Parts)
+                {
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <a href="@this.Url.Action("SinglePart", "SinglePart", new {item.PartID})"><img src="data:image/*;base64,@(Convert.ToBase64String(item.PartPicture))" class="img-fluid"></a>                      
+                        <div class="portfolio-info">
+                            <h4>@item.PartName</h4>
+                            <p>@item.PartPrice.ToString("#.##.##") лв.</p>  
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>       
+        </section>
+    <!-- End CarParts Section -->
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Често задавани въпроси?</h2>
+            </div>
+
+            <div class="faq-list">
+                <ul>
+                    <li data-aos="fade-up">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">От къде се внасят автомобилите? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                            <p>
+                                Автомобилите са внос от Италия, Германия и Швейцария. Всички коли са със сервизна история и реални километри.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Какви документи тряба да нося при покупка на автомобил? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                За да закупите автомобил от нас Ви е нужна само лична карта.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Предлагате ли транспорт? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                        <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Да, в зависимост от дестинацията има два варианта за транспорт.
+                                <br>
+                                1. Предлагаме безплатен транспорт в рамките на 100км.
+                                <br>
+                                2. За дестинации над 100 км, можем да съдействаме за осигуряването на транспорт от страна на фирма, като разходите са за сметка на клиента.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Контакти</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <i class="bx bx-map"></i>
+                                <h3>Адрес</h3>
+                                <p>Враца, Оряховско шосе-срещу Метан станцията</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="bx bx-envelope"></i>
+                                <h3>Имейл</h3>
+                                <p>info@ibor.com</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box mt-4">
+                                <i class="bx bx-phone-call"></i>
+                                <h3>Телефон</h3>
+                                <p>0893515395</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.592425742934!2d23.563557476074184!3d43.23900427112477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ab19d61d187dc9%3A0xa30d5db143303045!2z0JDQstGC0L7QutGK0YnQsCBJQk9S!5e0!3m2!1sbg!2sbg!4v1710765209790!5m2!1sbg!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Frequently Asked Questions Section -->
+</main><!-- End #main -->

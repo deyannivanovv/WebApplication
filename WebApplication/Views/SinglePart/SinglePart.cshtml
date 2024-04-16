@@ -1,0 +1,50 @@
+﻿@model WebApplication.Services.Models.CarPartsOverViewModel
+<head>
+    <link href="~/assets/css/singlepartstyle.css" rel="stylesheet">
+</head>
+<div class="container">       
+    <div class="part-info">
+        <h1>@Model.PartName</h1>
+        <div class="price">@Model.PartPrice.ToString("#.##.##") лв.</div>
+        <div class="details">            
+            <div class="detail">
+                <span>Вид скоростна кутия:</span>
+                <span>@Model.GearboxType</span>
+            </div>
+            <div class="detail">
+                <span>Брой скорости:</span>
+                <span>@Model.NumofGears</span>
+            </div>
+            <div class="detail">
+                <span>Състояние:</span>
+                <span>@Model.PartCondition</span>
+            </div>            
+        </div>        
+    </div>   
+</div>
+<div class="car-image">
+    <div class="car-image">        
+            <img src="data:image/*;base64,@(Convert.ToBase64String(Model.PartPicture))" />        
+    </div>
+</div>
+<section class="extras">
+    <div class="container">
+        <h2>Допълнителна информация:</h2>
+        <div class="more-info">
+            <ul>
+                <p>@Model.PartDescription</p>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="contact-info">
+    <div class="container">
+        <h2>За връзка с нас:</h2>
+        <p>Деян Иванов</p>
+        <p>Телефон: 0893515395</p>
+        <p>Email: info@ibor.com</p>
+        <p>Локация: Враца, Оряховско шосе-срещу Метан станцията</p>
+    </div>
+    
+</section>

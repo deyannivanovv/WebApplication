@@ -1,0 +1,167 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+header {
+    background-color: rgba(55, 64, 85, 0.9);
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+}
+
+    .logo img {
+        max-width: 150px;
+    }
+
+.logotext {
+    color: #eee;
+    font-size: 19px;
+    margin-left: 1px
+}
+
+.contact {
+    text-align: right;
+}
+
+.car-info {
+    flex: 1;
+    padding-right: 20px;
+}
+
+    .car-info h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.details {
+    margin-top: 40px;
+}
+
+.detail {
+    display: flow;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+    .detail span {
+        flex: 1;
+    }
+
+.car-image {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .car-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+.extras h2, .contact-info h2 {
+    margin-top: 0px;
+}
+
+.extras ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .extras ul li {
+        margin-bottom: 10px;
+    }
+
+.contact-info p {
+    margin-top: 8px;
+}
+
+.slide-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+    .slide-container img {
+        max-width: 80%;
+        height: auto;
+        display: none;
+    }
+
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
+}
+
+.contact-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .contact-button:hover {
+        background-color: #0056b3;
+    }
+
+.additional-info {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+    .additional-info p {
+        margin-bottom: 10px;
+    }
+
+.more-info {
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25px;
+}
+
+    .more-info p {
+        margin-bottom: 10px;
+    }
